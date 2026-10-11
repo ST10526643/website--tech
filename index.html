@@ -1,0 +1,1746 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <meta name="description" content="Shop quality-tested refurbished laptops, phones, components and more. Better technology for your budget and the planet.">
+  <title>Second Wave — Quality Tech. Real Value.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17251f;
+      --muted: #69746e;
+      --green: #2c6b4e;
+      --green-dark: #204e39;
+      --lime: #d8f07b;
+      --paper: #f5f6f2;
+      --white: #fff;
+      --line: #e8ebe5;
+      --soft-green: #edf3ec;
+      --font-body: "DM Sans", sans-serif;
+      --font-display: "Manrope", sans-serif;
+      --content-width: 1160px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a,
+    input {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #92ae4b;
+      outline-offset: 3px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--content-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(255, 255, 255, .96);
+      border-bottom: 1px solid rgba(23, 37, 31, .06);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      min-height: 76px;
+      gap: 32px;
+    }
+
+    .brand {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.075em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--green);
+      color: white;
+    }
+
+    .brand-mark svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: #515c56;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .nav-links a,
+    .footer-nav a {
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover,
+    .footer-nav a:hover {
+      color: var(--green);
+    }
+
+    .header-tools {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .search-box {
+      display: flex;
+      width: 194px;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid #e7eae4;
+      border-radius: 8px;
+      background: #fbfcfa;
+      color: #78817b;
+    }
+
+    .search-box svg {
+      width: 15px;
+      flex: 0 0 auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 11px;
+    }
+
+    .search-box input::placeholder {
+      color: #929a94;
+    }
+
+    .basket-button {
+      position: relative;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .basket-button svg {
+      width: 19px;
+    }
+
+    .wishlist-button {
+      position: relative;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--ink);
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .wishlist-button:hover {
+      background: var(--soft-green);
+      color: var(--green);
+    }
+
+    .wishlist-button svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .wishlist-count {
+      position: absolute;
+      top: 0;
+      right: -2px;
+      display: grid;
+      min-width: 16px;
+      height: 16px;
+      place-items: center;
+      padding-inline: 3px;
+      border-radius: 20px;
+      background: var(--green);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .basket-count {
+      position: absolute;
+      top: 1px;
+      right: 0;
+      display: grid;
+      width: 16px;
+      height: 16px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: white;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .hero {
+      padding-top: 26px;
+    }
+
+    .hero-panel {
+      position: relative;
+      display: grid;
+      min-height: 440px;
+      grid-template-columns: 1.02fr .98fr;
+      overflow: hidden;
+      align-items: center;
+      border-radius: 15px;
+      background: #e9eee6;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      padding: 48px 0 50px 58px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #83a84e;
+      box-shadow: 0 0 0 4px rgba(131, 168, 78, .14);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      max-width: 470px;
+      margin: 20px 0 15px;
+      font-family: var(--font-display);
+      font-size: clamp(44px, 5vw, 65px);
+      font-weight: 600;
+      letter-spacing: -.075em;
+      line-height: 1.04;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-description {
+      max-width: 390px;
+      margin-bottom: 25px;
+      color: #626e66;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 43px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 7px;
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--green-dark);
+    }
+
+    .button svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      color: #617067;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .avatars {
+      display: flex;
+      padding-left: 4px;
+    }
+
+    .avatar {
+      display: grid;
+      width: 24px;
+      height: 24px;
+      margin-left: -4px;
+      place-items: center;
+      border: 2px solid #e9eee6;
+      border-radius: 50%;
+      background: #d1dec9;
+      color: #3f5947;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .avatar:nth-child(2) {
+      background: #e7ccb4;
+      color: #6d4c39;
+    }
+
+    .avatar:nth-child(3) {
+      background: #d7d6bd;
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 100%;
+      min-height: 440px;
+    }
+
+    .hero-visual::before {
+      position: absolute;
+      top: 8%;
+      right: -12%;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .24);
+      content: "";
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 25px 0 25px 12px;
+      overflow: hidden;
+      border-radius: 14px 0 0 14px;
+      background: #d2d7cd;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 48% center;
+    }
+
+    .hero-image::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(36, 54, 42, .04), transparent 35%, rgba(22, 35, 27, .08));
+      content: "";
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 21px;
+      bottom: 45px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, .72);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .92);
+      box-shadow: 0 10px 34px rgba(23, 37, 31, .1);
+    }
+
+    .note-icon {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border-radius: 8px;
+      background: #edf3e8;
+      color: var(--green);
+    }
+
+    .note-icon svg {
+      width: 16px;
+    }
+
+    .hero-note strong,
+    .hero-note span {
+      display: block;
+    }
+
+    .hero-note strong {
+      margin-bottom: 2px;
+      font-size: 10px;
+    }
+
+    .hero-note span {
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 28px 4px 8px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 7px 12px;
+    }
+
+    .trust-icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid #e3e8df;
+      border-radius: 10px;
+      background: white;
+      color: var(--green);
+    }
+
+    .trust-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .trust-item strong,
+    .trust-item span {
+      display: block;
+    }
+
+    .trust-item strong {
+      margin-bottom: 3px;
+      font-size: 10px;
+    }
+
+    .trust-item span {
+      color: var(--muted);
+      font-size: 9px;
+    }
+
+    .section {
+      padding-top: 82px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 11px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -.06em;
+    }
+
+    .section-heading p {
+      max-width: 345px;
+      margin: 0 0 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-card {
+      display: flex;
+      min-height: 226px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 15px 14px 13px;
+      border: 1px solid #e8ebe5;
+      border-radius: 10px;
+      background: white;
+      color: var(--ink);
+      text-align: left;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+      cursor: pointer;
+    }
+
+    .category-card:hover,
+    .category-card[aria-pressed="true"] {
+      transform: translateY(-2px);
+      border-color: #a8c29e;
+      box-shadow: 0 7px 20px rgba(32, 78, 57, .07);
+    }
+
+    .category-icon {
+      display: block;
+      width: 100%;
+      height: 168px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--soft-green);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .category-icon svg {
+      display: none;
+    }
+
+    .category-card[data-category="Laptops"] .category-icon {
+      background-image: url("https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80");
+    }
+
+    .category-card[data-category="Gaming"] .category-icon {
+      background-image: url("https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=600&q=80");
+    }
+
+    .category-card[data-category="Desktop Accessories"] .category-icon {
+      background-image: url("https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80");
+    }
+
+    .category-card[data-category="Monitors"] .category-icon {
+      background-image: url("https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80");
+    }
+
+    .category-card[data-category="RAM"] .category-icon {
+      background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80");
+    }
+
+    .category-card[data-category="Storage"] .category-icon {
+      background-image: url("https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=600&q=80");
+    }
+
+    .category-card[data-category="RAM"] { order: 5; }
+    .category-card[data-category="Storage"] { order: 6; }
+
+    .category-card strong {
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .products-section {
+      padding-top: 84px;
+    }
+
+    .product-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding-bottom: 18px;
+    }
+
+    .filter-button {
+      padding: 7px 12px;
+      border: 1px solid #e5e9e2;
+      border-radius: 20px;
+      background: transparent;
+      color: #647068;
+      font-size: 10px;
+      font-weight: 600;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+
+    .filter-button:hover,
+    .filter-button[aria-pressed="true"] {
+      border-color: var(--green);
+      background: var(--green);
+      color: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid #e9ece7;
+      border-radius: 10px;
+      background: white;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(29, 44, 34, .08);
+    }
+
+    .product-image {
+      position: relative;
+      height: 176px;
+      overflow: hidden;
+      background: #f0f1ed;
+    }
+
+    .product-wishlist {
+      position: absolute;
+      z-index: 1;
+      top: 10px;
+      right: 10px;
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border: 1px solid rgba(23, 37, 31, .08);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .94);
+      color: #69746e;
+      cursor: pointer;
+      transition: color .18s ease, background .18s ease, transform .18s ease;
+    }
+
+    .product-wishlist:hover {
+      transform: scale(1.06);
+      color: #a34852;
+    }
+
+    .product-wishlist[aria-pressed="true"] {
+      background: #fff1f2;
+      color: #bd4052;
+    }
+
+    .product-wishlist svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.04);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 11px;
+      left: 11px;
+      padding: 5px 8px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .94);
+      color: #526253;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .product-content {
+      padding: 13px 13px 12px;
+    }
+
+    .product-category {
+      display: block;
+      margin-bottom: 6px;
+      color: #839087;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .product-content h3 {
+      margin-bottom: 5px;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+
+    .product-spec {
+      min-height: 30px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.65;
+    }
+
+    .stock {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 12px;
+      color: #457549;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .stock::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #74aa64;
+      content: "";
+    }
+
+    .stock.low {
+      color: #987339;
+    }
+
+    .stock.low::before {
+      background: #d5a944;
+    }
+
+    .stock.out {
+      color: #9a5b50;
+    }
+
+    .stock.out::before {
+      background: #c57669;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid #eff1ed;
+    }
+
+    .price {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .price small {
+      display: block;
+      margin-top: 2px;
+      color: #929a94;
+      font-family: var(--font-body);
+      font-size: 8px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .add-button {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      border: 1px solid #dfe7dd;
+      border-radius: 8px;
+      background: #f5f8f3;
+      color: var(--green);
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease;
+    }
+
+    .add-button:hover:not(:disabled) {
+      background: var(--green);
+      color: white;
+    }
+
+    .add-button:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
+
+    .add-button svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 42px 20px;
+      border: 1px dashed #d7ded4;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .empty-state.is-visible {
+      display: block;
+    }
+
+    .empty-state.contact-panel:not(.is-visible) {
+      display: none;
+    }
+
+    .empty-state.contact-panel.is-visible {
+      display: flex;
+      padding: 38px 46px;
+      border: 0;
+      text-align: left;
+    }
+
+    .contact-section {
+      padding-block: 83px 73px;
+    }
+
+    .contact-panel {
+      position: relative;
+      display: flex;
+      min-height: 200px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      overflow: hidden;
+      padding: 38px 46px;
+      border-radius: 13px;
+      background: #e9eee6;
+    }
+
+    .contact-panel::after {
+      position: absolute;
+      top: -90px;
+      right: 20%;
+      width: 270px;
+      height: 270px;
+      border: 1px solid rgba(44, 107, 78, .10);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(44, 107, 78, .035), 0 0 0 68px rgba(44, 107, 78, .025);
+      content: "";
+      pointer-events: none;
+    }
+
+    .contact-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-copy .eyebrow {
+      margin-bottom: 11px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 8px;
+      font-family: var(--font-display);
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -.06em;
+    }
+
+    .contact-copy p {
+      max-width: 440px;
+      margin: 0;
+      color: #67746a;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .contact-action {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 auto;
+    }
+
+    .site-footer {
+      padding: 39px 0 20px;
+      background: #1e3127;
+      color: white;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid rgba(255, 255, 255, .13);
+    }
+
+    .site-footer .footer-values {
+      display: none;
+    }
+
+    .footer-value {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e7eee6;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .footer-value svg {
+      width: 15px;
+      height: 15px;
+      color: #bfdc86;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+      padding-block: 30px;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 10px;
+    }
+
+    .footer-brand .brand-mark {
+      background: #d8f07b;
+      color: #263f30;
+    }
+
+    .footer-brand p {
+      max-width: 265px;
+      margin-bottom: 0;
+      color: #bdc9bf;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .footer-heading {
+      margin: 3px 0 13px;
+      color: #f5f8f3;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .footer-nav {
+      display: grid;
+      justify-items: start;
+      gap: 9px;
+      color: #bdc9bf;
+      font-size: 10px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .social-link {
+      display: grid;
+      width: 29px;
+      height: 29px;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .21);
+      border-radius: 8px;
+      color: #e9f0e8;
+      transition: background .2s ease;
+    }
+
+    .social-link:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .social-link svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .footer-location {
+      color: #bdc9bf;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .footer-location-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .footer-location a:hover {
+      color: white;
+    }
+
+    .footer-location svg {
+      flex: 0 0 auto;
+      width: 14px;
+      height: 14px;
+      color: #bfdc86;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 17px;
+      border-top: 1px solid rgba(255, 255, 255, .13);
+      color: #aebdb2;
+      font-size: 9px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .footer-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-note svg {
+      width: 13px;
+      height: 13px;
+      color: #bfdc86;
+    }
+
+    .toast {
+      position: fixed;
+      z-index: 20;
+      right: 22px;
+      bottom: 22px;
+      padding: 12px 16px;
+      border-radius: 9px;
+      background: #1e3127;
+      box-shadow: 0 7px 24px rgba(0, 0, 0, .2);
+      color: white;
+      font-size: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 1400px) {
+      :root {
+        --content-width: 1210px;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .header-inner {
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 9px 24px 15px;
+        border-bottom: 1px solid var(--line);
+        background: white;
+      }
+
+      .nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        padding: 11px 0;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .header-tools {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .hero-panel {
+        min-height: 400px;
+      }
+
+      .hero-copy {
+        padding-left: 34px;
+      }
+
+      .hero-visual {
+        min-height: 400px;
+      }
+
+      .trust-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+
+      .trust-item {
+        justify-content: flex-start;
+        padding-left: 20px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-image {
+        height: 205px;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-main {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px 18px;
+      }
+
+      .footer-values {
+        gap: 17px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 32px, var(--content-width));
+      }
+
+      .header-inner {
+        min-height: 66px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .search-box {
+        width: 37px;
+        height: 37px;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .search-box input {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        background: white;
+      }
+
+      .search-box.is-open input {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 15px;
+      }
+
+      .hero-panel {
+        grid-template-columns: 1fr;
+        border-radius: 12px;
+      }
+
+      .hero-copy {
+        padding: 32px 25px 25px;
+      }
+
+      .hero h1 {
+        max-width: 380px;
+        margin-top: 15px;
+        font-size: clamp(43px, 12vw, 59px);
+      }
+
+      .hero-description {
+        max-width: 360px;
+        font-size: 12px;
+      }
+
+      .hero-trust {
+        margin-top: 19px;
+      }
+
+      .hero-visual {
+        min-height: 235px;
+      }
+
+      .hero-image {
+        inset: 0 0 0 25px;
+        border-radius: 10px 0 0 0;
+      }
+
+      .hero-note {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .trust-strip {
+        padding-top: 19px;
+      }
+
+      .trust-item {
+        gap: 8px;
+        padding-left: 3px;
+      }
+
+      .trust-icon {
+        width: 30px;
+        height: 30px;
+      }
+
+      .trust-item strong {
+        font-size: 9px;
+      }
+
+      .trust-item span {
+        font-size: 8px;
+      }
+
+      .section,
+      .products-section {
+        padding-top: 59px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 17px;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+
+      .section-heading p {
+        font-size: 10px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+      }
+
+      .category-card {
+        min-height: 180px;
+      }
+
+      .category-icon {
+        height: 118px;
+      }
+
+      .product-toolbar {
+        flex-wrap: wrap;
+      }
+
+      .product-grid {
+        gap: 9px;
+      }
+
+      .product-image {
+        height: 145px;
+      }
+
+      .product-content {
+        padding: 11px 10px;
+      }
+
+      .product-content h3 {
+        font-size: 11px;
+      }
+
+      .product-spec {
+        min-height: 30px;
+        font-size: 8px;
+      }
+
+      .contact-section {
+        padding-block: 59px 55px;
+      }
+
+      .contact-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 27px 24px;
+      }
+
+      .contact-copy h2 {
+        font-size: 23px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 27px 18px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-values {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+      }
+
+      .footer-value {
+        font-size: 8px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header-inner {
+        position: relative;
+      }
+
+      .search-box {
+        width: 36px;
+        justify-content: center;
+        padding: 9px;
+      }
+
+      .search-box input {
+        display: none;
+      }
+
+      .search-box:focus-within {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        justify-content: flex-start;
+        background: white;
+      }
+
+      .search-box:focus-within input {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Second Wave home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h9a4 4 0 0 1 0 8h-5"/><path d="m10 18-3-3 3-3"/><path d="M17 5l2 2-2 2"/></svg>
+        </span>
+        second wave
+      </a>
+
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-tools">
+        <label class="search-box" id="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+          <input id="product-search" type="search" placeholder="Search products..." aria-label="Search products">
+        </label>
+        <a class="basket-button" href="basket.html" aria-label="Shopping basket, 0 items">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <span class="basket-count" aria-live="polite">0</span>
+        </a>
+        <a class="wishlist-button" href="wishlist.html" aria-label="Wishlist, 0 items">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.7c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.7 4.7 0 0 1 12 6.2a4.7 4.7 0 0 1 8.8 2.5Z"/></svg>
+          <span class="wishlist-count" aria-live="polite">0</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Better tech, second time around</div>
+          <h1 id="hero-title">Quality Tech.<br><span>Real Value.</span></h1>
+          <p class="hero-description">Good technology deserves another go. Find dependable, carefully tested devices at prices that make sense.</p>
+          <a class="button" href="shop.html">Browse Our Stock
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+          <div class="hero-trust">
+            <div class="avatars" aria-hidden="true"><span class="avatar">J</span><span class="avatar">A</span><span class="avatar">M</span></div>
+            <span>Loved by 2,400+ happy customers</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Laptop and technology on a tidy desk">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Refurbished laptop ready for a new home" fetchpriority="high">
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7.5 12 3 4 7.5v9L12 21l8-4.5v-9Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <span><strong>Tested. Trusted. Ready.</strong><span>Quality-checked by real people</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-strip" id="about" aria-label="Why shop with Second Wave">
+        <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg></span><span><strong>Quality tested</strong><span>Checked before it ships</span></span></div>
+        <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M5 12h14M8 17h8"/><circle cx="8" cy="7" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="12" cy="17" r="2"/></svg></span><span><strong>Prices that make sense</strong><span>More tech, less spend</span></span></div>
+        <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></span><span><strong>Fast, friendly support</strong><span>Real people, real answers</span></span></div>
+        <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-8 0-14 3-14 9a6 6 0 0 0 6 6c6 0 8-7 8-15Z"/><path d="M4 21c2-5 6-9 11-12"/></svg></span><span><strong>A lighter footprint</strong><span>Good tech, less waste</span></span></div>
+      </div>
+    </section>
+
+    <section class="section container" id="categories" aria-labelledby="categories-title">
+      <div class="section-heading">
+        <div><div class="eyebrow">Find your next favorite</div><h2 id="categories-title">Shop by category</h2></div>
+        <p>From a full setup to that one hard-to-find part, there's a little something here for every tech project.</p>
+      </div>
+      <div class="category-grid">
+        <button class="category-card" type="button" data-category="RAM" aria-pressed="false"><span class="category-icon"></span><strong>RAM</strong></button>
+        <button class="category-card" type="button" data-category="Storage" aria-pressed="false"><span class="category-icon"></span><strong>Storage</strong></button>
+        <button class="category-card" type="button" data-category="Laptops" aria-pressed="false"><span class="category-icon"><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="" loading="lazy"></span><strong>Laptops</strong></button>
+        <button class="category-card" type="button" data-category="Gaming" aria-pressed="false"><span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 9h11a4.5 4.5 0 0 1 4.4 5.5l-.7 3a2 2 0 0 1-3.3 1l-2.4-2H8.5l-2.4 2a2 2 0 0 1-3.3-1l-.7-3A4.5 4.5 0 0 1 6.5 9Z"/><path d="M8 11v4m-2-2h4m7-.5h.01M18 14.5h.01"/></svg></span><strong>Gaming</strong></button>
+        <button class="category-card" type="button" data-category="Desktop Accessories" aria-pressed="false"><span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h.01M10 10h.01M13 10h.01M16 10h.01M8 14h8"/></svg></span><strong>Desktop Accessories</strong></button>
+        <button class="category-card" type="button" data-category="Monitors" aria-pressed="false"><span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="1.5"/><path d="M12 16v5m-4 0h8"/></svg></span><strong>Monitors</strong></button>
+      </div>
+    </section>
+
+    <section class="products-section container" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <h2 id="products-title">Our collection</h2>
+      </div>
+      <div class="product-grid" id="product-grid">
+        <article class="product-card" data-category="Laptops" data-search="thinkpad t14 gen 2 laptop intel core i5 16gb ram 512gb ssd grade a refurbished">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Lenovo ThinkPad T14 Gen 2 refurbished laptop" loading="lazy"><span class="product-badge">GRADE A · TESTED</span></div>
+          <div class="product-content"><span class="product-category">Laptops</span><h3>Lenovo ThinkPad T14 Gen 2</h3><p class="product-spec">Intel Core i5 · 16GB RAM · 512GB SSD</p><span class="stock">In stock</span><div class="product-bottom"><span class="price">$429<small>Was $799</small></span><button class="add-button" type="button" aria-label="Add Lenovo ThinkPad T14 Gen 2 to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Laptops" data-search="macbook air m1 2020 apple laptop 8gb ram 256gb ssd excellent">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Apple MacBook Air M1 in excellent condition" loading="lazy"><span class="product-badge">EXCELLENT CONDITION</span></div>
+          <div class="product-content"><span class="product-category">Laptops</span><h3>MacBook Air M1 · 2020</h3><p class="product-spec">Apple M1 · 8GB RAM · 256GB SSD</p><span class="stock low">Only 2 left</span><div class="product-bottom"><span class="price">$549<small>Was $899</small></span><button class="add-button" type="button" aria-label="Add MacBook Air M1 to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Gaming" data-search="gaming desktop tower intel core i7 16gb ram 512gb ssd refurbished tested">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Refurbished gaming desktop setup" loading="lazy"><span class="product-badge">WORKSHOP PICK</span></div>
+          <div class="product-content"><span class="product-category">Gaming</span><h3>Gaming Desktop Tower</h3><p class="product-spec">Intel Core i7 · 16GB RAM · 512GB SSD</p><span class="stock">In stock</span><div class="product-bottom"><span class="price">$379<small>Was $629</small></span><button class="add-button" type="button" aria-label="Add Gaming Desktop Tower to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Desktop Accessories" data-search="samsung 870 evo sata ssd 1tb desktop accessory storage solid state drive tested">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Samsung 870 EVO solid state drive" loading="lazy"><span class="product-badge">FULLY TESTED</span></div>
+          <div class="product-content"><span class="product-category">Desktop Accessories</span><h3>Samsung 870 EVO · 1TB</h3><p class="product-spec">2.5&quot; SATA SSD · Health checked · 1TB</p><span class="stock">In stock</span><div class="product-bottom"><span class="price">$69<small>Was $109</small></span><button class="add-button" type="button" aria-label="Add Samsung 870 EVO 1TB to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Desktop Accessories" data-search="thinkpad t480 replacement keyboard genuine laptop part desktop accessory tested">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Replacement ThinkPad laptop keyboard" loading="lazy"><span class="product-badge">GENUINE PART</span></div>
+          <div class="product-content"><span class="product-category">Desktop Accessories</span><h3>ThinkPad T480 Keyboard</h3><p class="product-spec">Genuine replacement · Backlit · Tested</p><span class="stock">In stock</span><div class="product-bottom"><span class="price">$34<small>Grade A</small></span><button class="add-button" type="button" aria-label="Add ThinkPad T480 keyboard to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Monitors" data-search="24 inch dell ips monitor full hd 1080p adjustable stand refurbished tested">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Refurbished Dell 24-inch monitor" loading="lazy"><span class="product-badge">TESTED &amp; READY</span></div>
+          <div class="product-content"><span class="product-category">Monitors</span><h3>Dell 24&quot; IPS Monitor</h3><p class="product-spec">Full HD 1080p · IPS · Adjustable stand</p><span class="stock">In stock</span><div class="product-bottom"><span class="price">$119<small>Was $199</small></span><button class="add-button" type="button" aria-label="Add Dell 24-inch IPS Monitor to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Gaming" data-search="gaming mouse rgb wired adjustable dpi refurbished tested gaming accessory">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Tested gaming mouse with adjustable DPI" loading="lazy"><span class="product-badge">TESTED &amp; READY</span></div>
+          <div class="product-content"><span class="product-category">Gaming</span><h3>RGB Gaming Mouse</h3><p class="product-spec">Wired · Adjustable DPI · Tested</p><span class="stock low">Limited stock</span><div class="product-bottom"><span class="price">$29<small>Was $49</small></span><button class="add-button" type="button" aria-label="Add RGB Gaming Mouse to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Desktop Accessories" data-search="used laptop parts bundle assorted components desktop accessories repair">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Assorted used computer components and accessories" loading="lazy"><span class="product-badge">FOR PARTS / REPAIR</span></div>
+          <div class="product-content"><span class="product-category">Desktop Accessories</span><h3>Mixed Parts &amp; Accessories</h3><p class="product-spec">Assorted components · Sold as-is · 1kg</p><span class="stock low">Limited bundles</span><div class="product-bottom"><span class="price">$19<small>Sold as-is</small></span><button class="add-button" type="button" aria-label="Add mixed parts and accessories bundle to basket"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+        <article class="product-card" data-category="Monitors" data-search="hp 24 inch full hd monitor 1080p tested refurbished adjustable">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Refurbished HP 24-inch Full HD monitor" loading="lazy"><span class="product-badge">GREAT LITTLE SETUP</span></div>
+          <div class="product-content"><span class="product-category">Monitors</span><h3>HP 24&quot; Full HD Monitor</h3><p class="product-spec">1080p · HDMI · Fully tested</p><span class="stock out">Currently sold out</span><div class="product-bottom"><span class="price">$99<small>Was $159</small></span><button class="add-button" type="button" aria-label="HP 24-inch Full HD Monitor is out of stock" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div></div>
+        </article>
+      </div>
+      <section class="empty-state contact-panel" id="empty-state" aria-labelledby="no-results-title">
+        <div class="contact-copy">
+          <div class="eyebrow">Can't find what you're looking for?</div>
+          <h2 id="no-results-title">Need a specific part?</h2>
+          <p>Tell us what you're hunting for. Our team knows their way around a parts drawer and is happy to help you track it down.</p>
+        </div>
+        <a class="button contact-action" href="mailto:hello@secondwave.tech?subject=Help%20finding%20a%20part">Ask our team
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </section>
+    </section>
+
+    <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div class="contact-copy">
+          <div class="eyebrow">Can't find what you're looking for?</div>
+          <h2 id="contact-title">Need a specific part?</h2>
+          <p>Tell us what you're hunting for. Our team knows their way around a parts drawer and is happy to help you track it down.</p>
+        </div>
+        <a class="button contact-action" href="mailto:hello@secondwave.tech?subject=Help%20finding%20a%20part">Ask our team
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="index.html" aria-label="Second Wave home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h9a4 4 0 0 1 0 8h-5"/><path d="m10 18-3-3 3-3"/><path d="M17 5l2 2-2 2"/></svg></span>
+          second wave
+        </a>
+        <div class="footer-values" aria-label="Our values">
+          <span class="footer-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7.5 12 3 4 7.5v9L12 21l8-4.5v-9Z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg>Quality Tested</span>
+          <span class="footer-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20m7-17H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H5"/></svg>Great Prices</span>
+          <span class="footer-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg>Fast Support</span>
+          <span class="footer-value"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-8 0-14 3-14 9a6 6 0 0 0 6 6c6 0 8-7 8-15Z"/><path d="M4 21c2-5 6-9 11-12"/></svg>Sustainable Tech</span>
+        </div>
+      </div>
+      <div class="footer-main">
+        <div>
+          <h2 class="footer-heading">Products</h2>
+          <nav class="footer-nav" aria-label="Product links">
+            <a href="shop.html">All products</a><a href="shop.html?category=Laptops">Laptops</a><a href="shop.html?category=Gaming">Gaming</a><a href="shop.html?category=Desktop%20Accessories">Desktop accessories</a><a href="shop.html?category=Monitors">Monitors</a>
+          </nav>
+        </div>
+        <div>
+          <h2 class="footer-heading">Collections</h2>
+          <nav class="footer-nav" aria-label="Collection links">
+            <a href="categories.html">Shop by category</a><a href="shop.html">Fresh from the workshop</a><a href="shop.html?category=Gaming">Gaming picks</a><a href="shop.html?category=Monitors">Displays</a>
+          </nav>
+        </div>
+        <div>
+          <h2 class="footer-heading">Company info</h2>
+          <nav class="footer-nav" aria-label="Company information">
+            <a href="about.html">About Second Wave</a><a href="about.html">Our values</a><a href="contact.html">Contact &amp; support</a><a href="mailto:hello@secondwave.tech">Email us</a>
+          </nav>
+        </div>
+        <div>
+          <h2 class="footer-heading">Follow along</h2>
+          <nav class="footer-nav" aria-label="Contact links">
+            <a href="mailto:hello@secondwave.tech">hello@secondwave.tech</a><a href="contact.html">Ask about a part</a>
+          </nav>
+          <div class="footer-socials" aria-label="Social media">
+            <a class="social-link" href="https://www.instagram.com/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+            <a class="social-link" href="https://www.facebook.com/" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.4v2.2H7v3.2h2.9V21h3.5Z"/></svg></a>
+            
+          </div>
+        </div>
+        <div class="footer-location"><h2 class="footer-heading">Location</h2><div class="footer-location-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><a href="https://maps.google.com/?q=Hatfield%2C+Pretoria%2C+South+Africa">Hatfield, Pretoria,<br>Gauteng, South Africa</a></div></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Second Wave Tech. Good tech, on its second life.</p>
+        <span class="footer-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-8 0-14 3-14 9a6 6 0 0 0 6 6c6 0 8-7 8-15Z"/><path d="M4 21c2-5 6-9 11-12"/></svg>A little less waste. A lot more possibility.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="wishlist.js" defer></script>
+  <script src="basket.js" defer></script>
+  <script>
+    const productCards = [...document.querySelectorAll(".product-card")];
+    const filterButtons = [...document.querySelectorAll(".filter-button")];
+    const categoryCards = [...document.querySelectorAll(".category-card")];
+    const searchInput = document.querySelector("#product-search");
+    const emptyState = document.querySelector("#empty-state");
+    const toast = document.querySelector("#toast");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector("#primary-navigation");
+    const searchBox = document.querySelector("#search-box");
+    let activeCategory = "All";
+
+    function updateProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleProducts = 0;
+
+      productCards.forEach((card) => {
+        const searchText = `${card.dataset.search} ${card.textContent}`.toLowerCase();
+        const matchesCategory = activeCategory === "All"
+          || card.dataset.category === activeCategory
+          || (activeCategory === "RAM" && /\bram\b/.test(searchText))
+          || (activeCategory === "Storage" && /\b(ssd|hdd|storage|drive|disk)\b/.test(searchText));
+        const matchesSearch = !query || `${card.dataset.search} ${card.textContent}`.toLowerCase().includes(query);
+        const isVisible = matchesCategory && matchesSearch;
+        card.hidden = !isVisible;
+        if (isVisible) visibleProducts += 1;
+      });
+
+      emptyState.classList.toggle("is-visible", visibleProducts === 0);
+    }
+
+    function setCategory(category) {
+      activeCategory = category;
+      filterButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === category));
+      });
+      categoryCards.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.category === category));
+      });
+      updateProducts();
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => setCategory(button.dataset.filter));
+    });
+
+    categoryCards.forEach((button) => {
+      button.addEventListener("click", () => {
+        window.location.href = `shop.html?category=${encodeURIComponent(button.dataset.category)}`;
+      });
+    });
+
+    searchInput.addEventListener("input", updateProducts);
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+      navigation.classList.toggle("is-open", !isOpen);
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+      });
+    });
+
+    searchBox.addEventListener("click", () => {
+      if (window.matchMedia("(max-width: 600px)").matches && !searchBox.classList.contains("is-open")) {
+        searchBox.classList.add("is-open");
+        searchInput.focus();
+      }
+    });
+
+    searchInput.addEventListener("blur", () => {
+      if (!searchInput.value) searchBox.classList.remove("is-open");
+    });
+  </script>
+</body>
+</html>
